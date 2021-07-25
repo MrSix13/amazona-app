@@ -30,7 +30,7 @@ const data ={
             price: 60,
             brand:'EA',
             numReviews:10,
-            rating: 4.5,
+            rating: 2.5,
             description: 'New Shooter game by EA'
         }
     ]
