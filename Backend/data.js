@@ -6,7 +6,7 @@ const data ={
             category: 'Shooter',
             image:'/images/battlefield.jpg',
             price: 190,
-            countInStock:2,
+            countInStock:20,
             brand:'EA',
             numReviews:10,
             rating: 4.5,
@@ -31,7 +31,7 @@ const data ={
             image:'/images/fifa22.jpg',
             price: 60,
             brand:'EA',
-            countInStock:2,
+            countInStock:20,
             numReviews:10,
             rating: 2.5,
             description: 'New Shooter game by EA'
