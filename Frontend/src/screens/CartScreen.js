@@ -1,6 +1,6 @@
 import {useEffect} from'react';
 import {useDispatch,useSelector} from'react-redux';
-import {addToCart} from '../actions/cartActions';
+import {addToCart, removeFromCart} from '../actions/cartActions';
 import {Link} from 'react-router-dom';
 import MessageBox from '../components/MessageBox';
 
@@ -18,8 +18,11 @@ const CartScreen = (props) => {
     },[dispatch,productId,qty])
     
     const removeFromCartHandler = (id)=>{
-        //delete acctions
+        dispatch(removeFromCart(id))
     };
+    const checkoutHandler = ()=>{
+        props.history.push('/signin?redirect=shipping')
+    }
 
     return (
         <div className="row top">
@@ -47,8 +50,8 @@ const CartScreen = (props) => {
                                             value={item.qty}
                                             onChange={(e)=>{
                                                 dispatch(
-                                                    addToCart(item.product),
-                                                    Number(e.target.value)
+                                                    addToCart(item.product,Number(e.target.value)),
+                                                    
                                                 )
                                             }}
                                         >
@@ -72,6 +75,28 @@ const CartScreen = (props) => {
                          ))}  
                     </ul>
                 )}
+            </div>
+            <div className="col-1">
+                <div className="card card-body">
+                    <ul>
+                        <li>
+                        <h2>
+                            Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
+                            {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                        </h2>
+                        </li>
+                        <li>
+                        <button
+                            type="button"
+                            onClick={checkoutHandler}
+                            className="primary block"
+                            disabled={cartItems.length === 0}
+                        >
+                            Proceed to Checkout
+                        </button>
+                        </li>
+                    </ul>
+                </div>                                                       
             </div>
         </div>
     )
