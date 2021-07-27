@@ -1,7 +1,15 @@
+import bcrypt from 'bcryptjs'
 const data ={
+    users:[
+        {
+            name:'SixFox',
+            email:'bastian@gmail.com',
+            password: bcrypt.hashSync('1234',8),
+            isAdmin: true
+        }
+    ],
     products:[
         {
-            _id:'1',
             name:'Battlefield 2042',
             category: 'Shooter',
             image:'/images/battlefield.jpg',
@@ -13,7 +21,6 @@ const data ={
             description: 'New Shooter game by EA'
         },
         {
-            _id:'2',
             name:'Call Of Duyt: Cold War',
             category: 'Shooter',
             image:'/images/coldwar.jpg',
@@ -25,7 +32,6 @@ const data ={
             description: 'New Shooter game by Activision'
         },
         {
-            _id:'3',
             name:'Fifa 22',
             category: 'Arcade',
             image:'/images/fifa22.jpg',
