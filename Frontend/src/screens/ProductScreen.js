@@ -14,6 +14,7 @@ const ProductScreen = (props) => {
     const {loading, error, product}= productDetails;
     const [qty, setQty]=useState(1)
     
+    
     useEffect(()=>{
         dispatch(detailsProduct(productId));
     },[dispatch,productId])
@@ -23,7 +24,9 @@ const ProductScreen = (props) => {
     }
 
     return (
+        
         <div>
+           
           { loading? <LoadingBox></LoadingBox>
               :
               error?<MessageBox variant="danger">{error}</MessageBox>
