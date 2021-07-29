@@ -6,10 +6,9 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 const RegisterScreen = (props) => {
-
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
     const [confirmPassword, setConfirmPassword]=useState('');
 
     const redirect = props.location.search? props.location.search.split('=')[1]:'/';
@@ -24,7 +23,7 @@ const RegisterScreen = (props) => {
         if(password !==confirmPassword){
             alert('Password and confirm password are not match')
         }else{
-            dispatch(register(email,password,name))
+            dispatch(register(name,email,password))
         }
     }
     useEffect(()=>{
