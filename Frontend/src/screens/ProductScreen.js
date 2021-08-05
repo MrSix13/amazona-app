@@ -23,6 +23,7 @@ const ProductScreen = (props) => {
         props.history.push(`/cart/${productId}?qty=${qty}`)
     }
 
+    
     return (
         
         <div>
@@ -73,7 +74,7 @@ const ProductScreen = (props) => {
                                                 <div>Qty</div>
                                                 <div>
                                                     <select value={qty} 
-                                                      onChange={e=> setQty(e.target.value)} 
+                                                      onChange={(e)=> setQty(e.target.value)} 
                                                     >
                                                         {[...Array(product.countInStock).keys()].map(
                                                             (x)=>(

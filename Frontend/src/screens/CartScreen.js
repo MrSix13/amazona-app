@@ -4,6 +4,7 @@ import {addToCart, removeFromCart} from '../actions/cartActions';
 import {Link} from 'react-router-dom';
 import MessageBox from '../components/MessageBox';
 
+
 const CartScreen = (props) => {
     const productId = props.match.params.id;
     const qty = props.location.search? Number(props.location.search.split('=')[1]):1

@@ -19,11 +19,12 @@ const ShippingAddressScreen = (props) => {
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
     const [country, setCountry] = useState(shippingAddress.country);
 
+    
     const dispatch = useDispatch();
 
     const submitHandler = (e)=>{
         e.preventDefault();
-        dispatch(saveShippingAddress(fullName,address,city,postalCode,country))
+        dispatch(saveShippingAddress({fullName,address,city,postalCode,country}))
         props.history.push('/payment');
     }
     return (

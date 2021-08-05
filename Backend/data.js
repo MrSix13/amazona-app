@@ -10,7 +10,7 @@ const data ={
     ],
     products:[
         {
-            name:'Battlefield 2042',
+            name:'Battlefield 20',
             category: 'Shooter',
             image:'/images/battlefield.jpg',
             price: 190,
@@ -40,6 +40,17 @@ const data ={
             countInStock:20,
             numReviews:10,
             rating: 2.5,
+            description: 'New Shooter game by EA'
+        },
+        {
+            name:'Super Smash Bros',
+            category: 'Arcade',
+            image:'/images/super.jpg',
+            price: 60,
+            brand:'EA',
+            countInStock:20,
+            numReviews:20,
+            rating: 3,
             description: 'New Shooter game by EA'
         }
     ]
